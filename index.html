@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Joe's Hotdogs extra</title>
+</head>
+
+<body>
+    <script language="javascript">
+
+        function compute() {
+            var qHot = $('#hot :selected').text();
+            var qFr = $('#fr :selected').text();
+            var qSo = $('#sod :selected').text();
+
+            var t = (4 * parseInt(qHot)) + (3 * parseInt(qFr)) + (2 * parseInt(qSo));
+
+            if (t == 0) {
+                alert("No items ordered!");
+            }
+
+            document.getElementById("out").innerHTML = "Total: $" + t;
+        }
+
+    </script>
+
+
+    <form action="/action_page.php">
+        <div>
+            <label for="hot">Hotdogs</label>
+            <select id="hot" name="hot">
+                <option value=0>0</option>
+                <option value=0>1</option>
+                <option value=0>2</option>
+                <option value=0>3</option>
+                <option value=0>4</option>
+                <option value=0>5</option>
+                <option value=0>10</option>
+                <option value=0>15</option>
+                <option value=0>20</option>
+            </select>
+            <label for="price">Price: $4</label>
+        </div>
+
+        <div>
+            <label for="fries">Fries</label>
+            <select id="fr" name="fr">
+                <option value=0>0</option>
+                <option value=0>1</option>
+                <option value=0>2</option>
+                <option value=0>3</option>
+                <option value=0>4</option>
+                <option value=0>5</option>
+                <option value=0>10</option>
+                <option value=0>15</option>
+                <option value=0>20</option>
+            </select>
+            <label for="price">Price: $3</label>
+        </div>
+
+        <div>
+            <label for="sodas">Sodas</label>
+            <select id="sod" name="sod">
+                <option value=0>0</option>
+                <option value=0>1</option>
+                <option value=0>2</option>
+                <option value=0>3</option>
+                <option value=0>4</option>
+                <option value=0>5</option>
+                <option value=0>10</option>
+                <option value=0>15</option>
+                <option value=0>20</option>
+            </select>
+            <label for="price">Price: $2</label>
+        </div>
+        <p></p>
+        <button type="button" onclick="compute()">Order</button>
+    </form>
+
+    <p></p>
+    <div id="out"></div>
+
+
+
+</body>
+
+</html>
